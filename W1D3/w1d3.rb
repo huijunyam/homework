@@ -21,10 +21,10 @@ def add_numbers(nums_array)
   end
 end
 
-puts add_numbers([1, 2, 3, 4]) # => returns 10
-puts add_numbers([3]) # => returns 3
-puts add_numbers([-80, 34, 7]) # => returns -39
-puts add_numbers([]) # => returns nil
+# puts add_numbers([1, 2, 3, 4]) # => returns 10
+# puts add_numbers([3]) # => returns 3
+# puts add_numbers([-80, 34, 7]) # => returns -39
+# puts add_numbers([]) # => returns nil
 
 def gamma_fnc(n)
   if n < 1
@@ -36,7 +36,7 @@ def gamma_fnc(n)
   end
 end
 
-puts gamma_fnc(0)  # => returns nil
-puts gamma_fnc(1)  # => returns 1
-puts gamma_fnc(4)  # => returns 6
-puts gamma_fnc(8)  # => returns 5040
+# puts gamma_fnc(0)  # => returns nil
+# puts gamma_fnc(1)  # => returns 1
+# puts gamma_fnc(4)  # => returns 6
+# puts gamma_fnc(8)  # => returns 5040

@@ -1,6 +1,6 @@
 require 'sqlite3'
 require 'singleton'
-
+require 'byebug'
 class PlayDBConnection < SQLite3::Database
   include Singleton
 
@@ -53,13 +53,13 @@ class Play
   def self.find_by_playwright(name)
     data = PlayDBConnection.instance.execute(<<-SQL, name)
       SELECT
-        *
+        plays.id, plays.playwright_id, plays.title, plays.year
       FROM
         plays
       JOIN
         playwrights ON playwrights.id = plays.playwright_id
       WHERE
-        name = ?
+        playwrights.name = ?
     SQL
 
     data.map { |datum| Play.new(datum) }

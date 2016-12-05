@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: yellow;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.ingredient-list {
+  list-style: square inside;
+}
+
+ol {
+  list-style: upper-roman inside;
+}
+
+header > img {
+  width: 100px;
+}
+
+ul li a {
+  color: inherit;
+  text-decoration: none;
+}

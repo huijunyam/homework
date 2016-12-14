@@ -1,0 +1,14 @@
+<h1>All Subs</h1>
+<%= current_user.username %>
+<% if @current_user %>
+  <%= link_to "Create New Sub", "/subs/new" %>
+<% end  %>
+
+<ul>
+  <% @current_user.moderated_subs.each do |sub| %>
+    <li><%= link_to "#{sub.title}", sub_url(sub) %></li>
+      <ul>
+        <li> <%= sub.description %> </li>
+      </ul>
+  <% end %>
+</ul>

@@ -21514,23 +21514,19 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var addLoggingToDispatch = function addLoggingToDispatch(store) {
-	  return function (next) {
-	    return function (action) {
-	      var localDispatch = store.dispatch;
-	      console.log(store.getState());
-	      console.log(action);
-	      var result = localDispatch(action);
-	      console.log(store.getState());
-	      return result;
-	    };
-	  };
-	};
+	// const addLoggingToDispatch = store => next => action => {
+	//   const localDispatch = store.dispatch;
+	//   console.log(store.getState());
+	//   console.log(action);
+	//   let result = localDispatch(action);
+	//   console.log(store.getState());
+	//   return result;
+	// };
 	
 	var configureStore = function configureStore() {
 	  var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 	
-	  var store = (0, _redux.createStore)(_root_reducer2.default, preloadedState, (0, _redux.applyMiddleware)(addLoggingToDispatch));
+	  var store = (0, _redux.createStore)(_root_reducer2.default, preloadedState /*applyMiddleware(addLoggingToDispatch)*/);
 	  store.subscribe(function () {
 	    localStorage.state = JSON.stringify(store.getState());
 	  });

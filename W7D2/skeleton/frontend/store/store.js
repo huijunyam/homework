@@ -1,17 +1,17 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore /*applyMiddleware*/ } from 'redux';
 import RootReducer from '../reducers/root_reducer';
 
-const addLoggingToDispatch = store => next => action => {
-  const localDispatch = store.dispatch;
-  console.log(store.getState());
-  console.log(action);
-  let result = localDispatch(action);
-  console.log(store.getState());
-  return result;
-};
+// const addLoggingToDispatch = store => next => action => {
+//   const localDispatch = store.dispatch;
+//   console.log(store.getState());
+//   console.log(action);
+//   let result = localDispatch(action);
+//   console.log(store.getState());
+//   return result;
+// };
 
 const configureStore = (preloadedState = {}) => {
-  const store = createStore(RootReducer, preloadedState, applyMiddleware(addLoggingToDispatch));
+  const store = createStore(RootReducer, preloadedState /*applyMiddleware(addLoggingToDispatch)*/);
   store.subscribe(() => {
     localStorage.state = JSON.stringify(store.getState());
   });
